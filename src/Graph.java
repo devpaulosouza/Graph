@@ -99,6 +99,10 @@ public class Graph {
             begin = Utils.readInt();
         }
 
+        if (nVertex < 2) {
+            System.out.printf("Graph's size must be greater than 1%n");
+            throw new Exception("InvalidArgumentException");
+        }
         if (naive && bruteForce) {
             System.out.printf("You can't run naive and brute force at same time%n");
             throw new Exception("InvalidArgumentException");
@@ -112,10 +116,10 @@ public class Graph {
         }
 
         if (naive) {
-            System.out.printf("Cost founded: %d%n", naive(graph, begin));
+            System.out.printf("Cost found: %d%n", naive(graph, begin));
         }
         if (bruteForce) {
-            System.out.printf("Cost founded: %d%n", bruteForce(graph, nVertex));
+            System.out.printf("Cost found: %d%n", bruteForce(graph, nVertex));
         }
         if (verbose) {
             Utils.printGraph(graph);
